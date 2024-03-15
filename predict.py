@@ -135,12 +135,12 @@ class Predictor(BasePredictor):
             default=None,
         ),
         width: int = Input(
-            description="Width of output image. Recommended 1024 or 1280",
-            default=1024
+            description="Width of output image",
+            default=1024, ge=256, le=1536
         ),
         height: int = Input(
-            description="Height of output image. Recommended 1024 or 1280",
-            default=1024
+            description="Height of output image",
+            default=1024, ge=256, le=1536
         ),
         num_outputs: int = Input(
             description="Number of images to output.",
@@ -154,10 +154,10 @@ class Predictor(BasePredictor):
             default="DPMSolver++",
         ),
         num_inference_steps: int = Input(
-            description="Number of denoising steps. 20 to 60 steps for more detail, 20 steps for faster results.", ge=1, le=100, default=50
+            description="Number of denoising steps", ge=1, le=60, default=25
         ),
         guidance_scale: float = Input(
-            description="Scale for classifier-free guidance. Recommended 4-6", ge=0, le=20, default=3
+            description="Scale for classifier-free guidance", ge=0.1, le=20, default=3
         ),
         prompt_strength: float = Input(
             description="Prompt strength when using img2img / inpaint. 1.0 corresponds to full destruction of information in image",
