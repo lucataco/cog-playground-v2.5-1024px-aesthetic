@@ -183,6 +183,10 @@ class Predictor(BasePredictor):
         print(f"Using seed: {seed}")
         generator = torch.Generator("cuda").manual_seed(seed)
 
+        # OOMs can leave vae in bad state
+        if self.txt2img_pipe.vae.dtype == torch.float32:
+            self.txt2img_pipe.vae.to(dtype=torch.float16)
+
         sdxl_kwargs = {}
         print(f"Prompt: {prompt}")
         if image and mask:
