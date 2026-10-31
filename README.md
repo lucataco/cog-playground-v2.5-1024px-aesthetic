@@ -11,3 +11,9 @@ Run predictions:
 ## Example
 
 ![output](output.0.png)
+
+## License
+
+The code in this repository is licensed under the [Apache License 2.0](LICENSE).
+
+The model weights are not covered by this license. [playgroundai/playground-v2.5-1024px-aesthetic](https://huggingface.co/playgroundai/playground-v2.5-1024px-aesthetic) is released under the [Playground v2.5 Community License](https://huggingface.co/playgroundai/playground-v2.5-1024px-aesthetic/blob/main/LICENSE.md). Check its terms before use.
